@@ -1,0 +1,8 @@
+.likes{
+    background: #98A4DA;
+    width: 80px;
+    /* text-align: center; */
+    padding: 1px 10px;
+    display: flex;
+    justify-content: space-between;
+}
