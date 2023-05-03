@@ -3,8 +3,14 @@ import { DialogName, DialogMsg } from "./dialog/Dialog";
 import "./dialogs.css"
 
 
+let msgText = React.createRef()
 
 function Dialogs(props) {
+    let addMsg = () => {
+        props.addMsg(msgText.current.value)
+    }
+
+    
     return (
         <div className="dialogs">
             <div className="dialogs-items">
@@ -16,8 +22,8 @@ function Dialogs(props) {
                 </div>
             </div>
             <div className="send-msg">
-                <input type="text" />
-                <button>SEND</button>
+                <input type="text" ref={msgText} />
+                <button onClick={addMsg}>SEND</button>
             </div>
 
         </div>

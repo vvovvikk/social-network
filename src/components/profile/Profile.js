@@ -11,7 +11,7 @@ function Profile(props){
     return(
       <div className="profile">
         <Profilinfo name={props.name} />
-        <Posts postData={props.profilePage.postData} />
+        <Posts postData={props.profilePage.postData} addPost={props.addPost} />
       </div>
     )
   }
