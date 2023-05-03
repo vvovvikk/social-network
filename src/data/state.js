@@ -117,7 +117,22 @@ let store = {
         return this._state
     },
 
+    dispatch(action) {
+        if (action.type == 'ADD-POST') {
+            let newPost = {
+                post: this._state.profilePage.newPostText,
+                id: 4,
+                likes: 10
+            }
 
+            this._state.profilePage.postData.unshift(newPost)
+            this._state.profilePage.newPostText = ''
+            this.rerenderTree(this._state)
+        } else if (action.type == 'POST-CHANGE') {
+            this._state.profilePage.newPostText = action.text
+            this.rerenderTree(this._state)
+        }
+    }
 
 }
 
