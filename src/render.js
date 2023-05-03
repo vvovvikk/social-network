@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { addPost, addMsg } from './data/state';
+import { addPost, addMsg, onChangePost, onChangeMsg } from './data/state';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +14,8 @@ export default function rerenderTree(state) {
         state={state}
         addPost={addPost}
         addMsg={addMsg}
+        onChangePost={onChangePost}
+        onChangeMsg={onChangeMsg}
       />
     </React.StrictMode>
   );

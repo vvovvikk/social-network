@@ -17,6 +17,7 @@ let state = {
             },
 
         ],
+        newPostText: 'Hello',
     },
     dialogsPage: {
         dialogNames: [
@@ -48,6 +49,7 @@ let state = {
                 id: 3
             },
         ],
+        newMsg: 'Новое сообщение'
     },
     navBar: {
         friends: [
@@ -78,7 +80,7 @@ export let addPost = (postText) => {
     }
 
     state.profilePage.postData.unshift(newPost)
-    console.log(state);
+    state.profilePage.newPostText=''
     rerenderTree(state)
 }
 
@@ -88,7 +90,17 @@ export let addMsg = (msgText) => {
         id: 4
     }
     state.dialogsPage.dialogMsgs.unshift(newMsg)
-    console.log(state);
+    state.dialogsPage.newMsg=''
+    rerenderTree(state)
+}
+
+export let onChangePost = (text) => {
+    state.profilePage.newPostText = text
+    rerenderTree(state)
+}
+
+export let onChangeMsg = (text) => {
+    state.dialogsPage.newMsg = text
     rerenderTree(state)
 }
 
