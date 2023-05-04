@@ -9,7 +9,7 @@ function Posts(props) {
         props.dispatch({type: 'ADD-POST'})
     }
     let onChange = () => {
-        props.dispatch({type: 'POST-CHANGE', text: postText.current.value})
+        props.dispatch({type: 'CHANGE-POST', text: postText.current.value})
     }
     console.log(props);
     return (

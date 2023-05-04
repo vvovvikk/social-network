@@ -16,8 +16,8 @@ function App(props) {
           <Routes>
             <Route path='/' element={<Profile profilePage={props.state.profilePage} newPostText={props.state.profilePage.newPostText} dispatch={props.dispatch} />} />
             <Route path='/profile' element={<Profile profilePage={props.state.profilePage} newPostText={props.state.profilePage.newPostText} dispatch={props.dispatch} />} />
-            <Route exact path='/dialogs' element={<Dialogs dialogsPage={props.state.dialogsPage} addMsg={props.addMsg} newMsg={props.state.dialogsPage.newMsg} onChangeMsg={props.onChangeMsg} />} />
-            <Route exact path='/messages' element={<Dialogs dialogsPage={props.state.dialogsPage} addMsg={props.addMsg} newMsg={props.state.dialogsPage.newMsg} onChangeMsg={props.onChangeMsg} />} />
+            <Route exact path='/dialogs' element={<Dialogs dialogsPage={props.state.dialogsPage} newMsg={props.state.dialogsPage.newMsg} dispatch={props.dispatch} />} />
+            <Route exact path='/messages' element={<Dialogs dialogsPage={props.state.dialogsPage} newMsg={props.state.dialogsPage.newMsg} dispatch={props.dispatch} />} />
           </Routes>
         </div>
       </BrowserRouter>

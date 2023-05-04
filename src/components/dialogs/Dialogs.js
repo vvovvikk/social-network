@@ -7,11 +7,11 @@ let msgText = React.createRef()
 
 function Dialogs(props) {
     let addMsg = () => {
-        props.addMsg(msgText.current.value)
+        props.dispatch({type: 'ADD-MSG'})
     }
-
+    
     let onChangeMsg = () => {
-        props.onChangeMsg(msgText.current.value)
+        props.dispatch({type: 'CHANGE-MSG', text: msgText.current.value})
     }
     console.log(props);
 

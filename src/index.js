@@ -15,8 +15,8 @@ function rerenderTree(state) {
       <App
         state={state}
         dispatch={store.dispatch.bind(store)}
-        addMsg={store.addMsg.bind(store)}
-        onChangeMsg={store.onChangeMsg.bind(store)}
+        // addMsg={store.addMsg.bind(store)}
+        // onChangeMsg={store.onChangeMsg.bind(store)}
       />
     </React.StrictMode>
   );

@@ -73,37 +73,37 @@ let store = {
         },
     },
 
-    addPost(postText) {
-        let newPost = {
-            post: postText,
-            id: 4,
-            likes: 10
-        }
+    // addPost(postText) {
+    //     let newPost = {
+    //         post: postText,
+    //         id: 4,
+    //         likes: 10
+    //     }
 
-        this._state.profilePage.postData.unshift(newPost)
-        this._state.profilePage.newPostText = ''
-        this.rerenderTree(this._state)
-    },
+    //     this._state.profilePage.postData.unshift(newPost)
+    //     this._state.profilePage.newPostText = ''
+    //     this.rerenderTree(this._state)
+    // },
 
-    addMsg(msgText) {
-        let newMsg = {
-            message: msgText,
-            id: 4
-        }
-        this._state.dialogsPage.dialogMsgs.unshift(newMsg)
-        this._state.dialogsPage.newMsg = ''
-        this.rerenderTree(this._state)
-    },
+    // onChangePost(text) {
+    //     this._state.profilePage.newPostText = text
+    //     this.rerenderTree(this._state)
+    // },
 
-    onChangePost(text) {
-        this._state.profilePage.newPostText = text
-        this.rerenderTree(this._state)
-    },
+    // addMsg(msgText) {
+    //     let newMsg = {
+    //         message: msgText,
+    //         id: 4
+    //     }
+    //     this._state.dialogsPage.dialogMsgs.unshift(newMsg)
+    //     this._state.dialogsPage.newMsg = ''
+    //     this.rerenderTree(this._state)
+    // },
 
-    onChangeMsg(text) {
-        this._state.dialogsPage.newMsg = text
-        this.rerenderTree(this._state)
-    },
+    // onChangeMsg(text) {
+    //     this._state.dialogsPage.newMsg = text
+    //     this.rerenderTree(this._state)
+    // },
 
     rerenderTree() {
         console.log('Заглушка');
@@ -128,8 +128,19 @@ let store = {
             this._state.profilePage.postData.unshift(newPost)
             this._state.profilePage.newPostText = ''
             this.rerenderTree(this._state)
-        } else if (action.type == 'POST-CHANGE') {
+        } else if (action.type == 'CHANGE-POST') {
             this._state.profilePage.newPostText = action.text
+            this.rerenderTree(this._state)
+        } else if (action.type == 'ADD-MSG') {
+            let newMsg = {
+                message: this._state.dialogsPage.newMsg,
+                id: 4
+            }
+            this._state.dialogsPage.dialogMsgs.unshift(newMsg)
+            this._state.dialogsPage.newMsg = ''
+            this.rerenderTree(this._state)
+        } else if (action.type == 'CHANGE-MSG') {
+            this._state.dialogsPage.newMsg = action.text
             this.rerenderTree(this._state)
         }
     }
