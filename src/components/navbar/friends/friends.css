@@ -1,0 +1,17 @@
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    border-top: 4px double #fff;
+}
+
+.friends h3 {
+    width: 100%;
+}
+
+.friends a {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
