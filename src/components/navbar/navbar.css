@@ -3,7 +3,7 @@
 
 }
 
-.navbar a {
+.navbar>a {
   display: block;
   border-radius: 10px;
   padding: 10px;
@@ -11,7 +11,7 @@
   text-decoration: none;
 }
 
-.navbar a:hover {
+.navbar>a:hover {
   background-color: #fff9;
 }
 

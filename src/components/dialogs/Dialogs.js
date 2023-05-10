@@ -1,17 +1,18 @@
 import React from "react";
 import { DialogName, DialogMsg } from "./dialog/Dialog";
 import "./dialogs.css"
+import { addMsgAC, changeMsgAC } from "../../data/dislogReduser";
 
 
 let msgText = React.createRef()
 
 function Dialogs(props) {
     let addMsg = () => {
-        props.dispatch({type: 'ADD-MSG'})
+        props.dispatch(addMsgAC())
     }
     
     let onChangeMsg = () => {
-        props.dispatch({type: 'CHANGE-MSG', text: msgText.current.value})
+        props.dispatch(changeMsgAC(msgText.current.value))
     }
     console.log(props);
 

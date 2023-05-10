@@ -14,4 +14,13 @@
     width: 100%;
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.friends a:hover {
+    color: blueviolet;
+    text-decoration: underline;
 }

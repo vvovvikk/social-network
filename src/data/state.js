@@ -1,6 +1,8 @@
 import burunov from "../img/Sergey_Burunov.jpg";
 import tohatjan from "../img/HrantTokhatyan.jpg";
 import truhin from "../img/MihailTruhin.jpg";
+import profileReduser from "./profileReduser";
+import dialogReduser from "./dislogReduser";
 
 
 let store = {
@@ -118,33 +120,17 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type == 'ADD-POST') {
-            let newPost = {
-                post: this._state.profilePage.newPostText,
-                id: 4,
-                likes: 10
-            }
+        this._state.profilePage = profileReduser(this._state.profilePage, action)
+        this._state.dialogsPage = dialogReduser(this._state.dialogsPage, action)
 
-            this._state.profilePage.postData.unshift(newPost)
-            this._state.profilePage.newPostText = ''
-            this.rerenderTree(this._state)
-        } else if (action.type == 'CHANGE-POST') {
-            this._state.profilePage.newPostText = action.text
-            this.rerenderTree(this._state)
-        } else if (action.type == 'ADD-MSG') {
-            let newMsg = {
-                message: this._state.dialogsPage.newMsg,
-                id: 4
-            }
-            this._state.dialogsPage.dialogMsgs.unshift(newMsg)
-            this._state.dialogsPage.newMsg = ''
-            this.rerenderTree(this._state)
-        } else if (action.type == 'CHANGE-MSG') {
-            this._state.dialogsPage.newMsg = action.text
-            this.rerenderTree(this._state)
-        }
-    }
+        this.rerenderTree(this._state)
+
+
+    },
+
+
 
 }
+
 
 export default store;
